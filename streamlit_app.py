@@ -49,4 +49,4 @@ streamlit.dataframe(my_data_rows)
 fruit_choice = streamlit.text_input('What Fruit would you like to add', 'jackfruit')
 streamlit.write('Thank you for adding', fruit_choice)
 
-my_cur.execute("insert into fruit_load_list values('from streamlit'))
+my_cur.execute("insert into fruit_load_list values('from streamlit')")
