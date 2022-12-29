@@ -14,8 +14,9 @@ from urllib.error import URLError
 #-----------------------------------------------------------
 #---------------------Snowflakes----------------------------
 #-----------------------------------------------------------
-streamlit.header("Badge 2: Data Application Builders Workshop")
-streamlit.text("Bhavin Panchal")
+streamlit.header("Snowflakes Badge 2: Data Application Builders Workshop")
+streamlit.text("Tech stack - Snowflakes, Python, REST API, Streamlit, Rivery")
+streamlit.text("                                            - Bhavin Panchal")
 streamlit.header("Task - 1 - Read data from Snowflakes")
 streamlit.text("Snowflakes connection was created in streamlit app")
 #-----------------------------------------------------------
@@ -42,7 +43,7 @@ def insert_row_snowflake(new_fruit):
     return "Thank you for adding " + new_fruit
 #-----------------------------------------------------------
     
-add_my_fruit = streamlit.text_input('What Fruit would you like to add (Write to Snowflakes')
+add_my_fruit = streamlit.text_input('What Fruit would you like to add (Write to Snowflakes)'
 if streamlit.button('Add a Fruit to the List'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   back_from_function = insert_row_snowflake(add_my_fruit)
