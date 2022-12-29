@@ -42,6 +42,7 @@ def insert_row_snowflake(new_fruit):
     return "Thank you for adding " + new_fruit
 #-----------------------------------------------------------
     
+streamlit.subheader("Task - 2 : Write data to Snowflakes")
 add_my_fruit = streamlit.text_input('What Fruit would you like to add (Write to Snowflakes)')
 if streamlit.button('Add a Fruit to the List'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
@@ -49,7 +50,7 @@ if streamlit.button('Add a Fruit to the List'):
   my_cnx.close()
   streamlit.text(back_from_function)
   
-streamlit.subheader('Task - 2 : Read data from S3 text file') 
+streamlit.subheader('Task - 3 : Read data from S3 text file') 
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 my_fruit_list = my_fruit_list.set_index('Fruit')
 
@@ -72,7 +73,7 @@ def get_fruitvice_data(this_fruit_choice):
   return fruityvice_normalized
 
 #New section to display Fruityvice api response
-streamlit.subheader("Task - 3 : Read JSON data from Fruityvice API")
+streamlit.subheader("Task - 4 : Read JSON data from Fruityvice API")
 try:
   fruit_choice = streamlit.text_input('What fruit would you like more information about? e.g. apple, banana', 'kiwi')
   if not fruit_choice:
