@@ -14,10 +14,10 @@ from urllib.error import URLError
 #-----------------------------------------------------------
 #---------------------Snowflakes----------------------------
 #-----------------------------------------------------------
-streamlit.title("Snowflakes Badge 2: Data Application Builders Workshop")
-streamlit.subheader("Tech stack - Snowflakes, Python, REST API, Streamlit, Rivery")
-streamlit.subheader("                                            - Bhavin Panchal")
-streamlit.header("Task - 1 - Read data from Snowflakes")
+streamlit.header("Snowflakes Badge 2: Data Application Builders Workshop")
+streamlit.caption("Tech stack - Snowflakes, Python, REST API, Streamlit, Rivery")
+streamlit.caption("                                            - Bhavin Panchal")
+streamlit.subheader("Task - 1 - Read data from Snowflakes")
 streamlit.text("Snowflakes connection was created in streamlit app")
 #-----------------------------------------------------------
 #snowflakes related function
@@ -50,7 +50,7 @@ if streamlit.button('Add a Fruit to the List'):
   my_cnx.close()
   streamlit.text(back_from_function)
   
-streamlit.header('Task - 2 - Read data from S3 text file') 
+streamlit.subheader('Task - 2 - Read data from S3 text file') 
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 my_fruit_list = my_fruit_list.set_index('Fruit')
 
@@ -73,7 +73,7 @@ def get_fruitvice_data(this_fruit_choice):
   return fruityvice_normalized
 
 #New section to display Fruityvice api response
-streamlit.header("Task - 3 - Read JSON data from Fruityvice API")
+streamlit.subheader("Task - 3 - Read JSON data from Fruityvice API")
 try:
   fruit_choice = streamlit.text_input('What fruit would you like more information about? e.g. apple, banana', 'kiwi')
   if not fruit_choice:
