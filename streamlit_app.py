@@ -14,9 +14,9 @@ from urllib.error import URLError
 #-----------------------------------------------------------
 #---------------------Snowflakes----------------------------
 #-----------------------------------------------------------
-streamlit.header("Snowflakes Badge 2: Data Application Builders Workshop")
-streamlit.text("Tech stack - Snowflakes, Python, REST API, Streamlit, Rivery")
-streamlit.text("                                            - Bhavin Panchal")
+streamlit.title("Snowflakes Badge 2: Data Application Builders Workshop")
+streamlit.subheader("Tech stack - Snowflakes, Python, REST API, Streamlit, Rivery")
+streamlit.subheader("                                            - Bhavin Panchal")
 streamlit.header("Task - 1 - Read data from Snowflakes")
 streamlit.text("Snowflakes connection was created in streamlit app")
 #-----------------------------------------------------------
