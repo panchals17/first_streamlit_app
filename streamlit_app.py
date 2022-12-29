@@ -14,7 +14,8 @@ from urllib.error import URLError
 #-----------------------------------------------------------
 #---------------------Snowflakes----------------------------
 #-----------------------------------------------------------
-
+streamlit.header("Task - 1 - Read data from Snowflakes")
+streamlit.text("Snowflakes connection was created in streamlit app")
 streamlit.header("The Fruit load list contains:")
 #-----------------------------------------------------------
 #snowflakes related function
@@ -25,7 +26,7 @@ def get_fruit_load_list():
 #-----------------------------------------------------------
 
 #Add button to load the fruit
-if streamlit.button('Get Fruit Load list'):
+if streamlit.button('Get Fruit Load list from Snowflakes'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   my_data_rows = get_fruit_load_list()
   my_cnx.close()
@@ -83,6 +84,6 @@ try:
 except URLError as e:
   streamlit.error()
 
-streamlit.header("Task - 3 - Snowflakes")
+
 
 # my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
