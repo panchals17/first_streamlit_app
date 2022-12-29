@@ -14,9 +14,10 @@ from urllib.error import URLError
 #-----------------------------------------------------------
 #---------------------Snowflakes----------------------------
 #-----------------------------------------------------------
+streamlit.header("Badge 2: Data Application Builders Workshop")
+streamlit.text("Bhavin Panchal")
 streamlit.header("Task - 1 - Read data from Snowflakes")
 streamlit.text("Snowflakes connection was created in streamlit app")
-streamlit.header("The Fruit load list contains:")
 #-----------------------------------------------------------
 #snowflakes related function
 def get_fruit_load_list():
@@ -26,7 +27,7 @@ def get_fruit_load_list():
 #-----------------------------------------------------------
 
 #Add button to load the fruit
-if streamlit.button('Get Fruit Load list from Snowflakes'):
+if streamlit.button('Get Fruit Load list (Read from Snowflakes)'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   my_data_rows = get_fruit_load_list()
   my_cnx.close()
@@ -41,14 +42,14 @@ def insert_row_snowflake(new_fruit):
     return "Thank you for adding " + new_fruit
 #-----------------------------------------------------------
     
-add_my_fruit = streamlit.text_input('What Fruit would you like to add')
+add_my_fruit = streamlit.text_input('What Fruit would you like to add (Write to Snowflakes')
 if streamlit.button('Add a Fruit to the List'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   back_from_function = insert_row_snowflake(add_my_fruit)
   my_cnx.close()
   streamlit.text(back_from_function)
   
-streamlit.header('Task - 1 - Read data from S3 text file') 
+streamlit.header('Task - 2 - Read data from S3 text file') 
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 my_fruit_list = my_fruit_list.set_index('Fruit')
 
@@ -71,7 +72,7 @@ def get_fruitvice_data(this_fruit_choice):
   return fruityvice_normalized
 
 #New section to display Fruityvice api response
-streamlit.header("Task - 2 - Read JSON data from Fruityvice API")
+streamlit.header("Task - 3 - Read JSON data from Fruityvice API")
 try:
   fruit_choice = streamlit.text_input('What fruit would you like more information about? e.g. apple, banana', 'kiwi')
   if not fruit_choice:
